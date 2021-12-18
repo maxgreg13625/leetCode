@@ -5,12 +5,12 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        ##brute force method
+        ## brute force method                                  3074ms/14.3MB
         #for i, v1 in enumerate(nums):
         #    for j, v2 in enumerate(nums[i+1:]):
         #        if v1 + v2 == target:
         #            return [i, i+j+1]
-        #use python dict as hash table to improve performance
+        #use python dict as hash table to improve performance    50ms/14.5MB
         temp_dict = {}
         for i, v1 in enumerate(nums):
             if target - v1 not in temp_dict:
