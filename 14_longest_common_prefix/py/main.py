@@ -39,7 +39,7 @@ class Solution(object):
 		#		break
 		#return result_str
 
-#assert Solution().longestCommonPrefix(['flower','flow','flight']) == 'fl'
-#assert Solution().longestCommonPrefix(['dog','racecar','car']) == ''
+assert Solution().longestCommonPrefix(['flower','flow','flight']) == 'fl'
+assert Solution().longestCommonPrefix(['dog','racecar','car']) == ''
 assert Solution().longestCommonPrefix(['c','acc','ccc']) == ''
 assert Solution().longestCommonPrefix(['a']) == 'a'
