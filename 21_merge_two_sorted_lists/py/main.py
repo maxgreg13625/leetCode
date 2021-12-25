@@ -10,6 +10,18 @@ class Solution(object):
         :type l2: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
+        # 40ms/14.3MB  in short O(n+m)
+        final_node = temp_node = ListNode(0)
+        while l1 and l2:
+            if l1.val <= l2.val:
+                temp_node.next = l1
+                l1 = l1.next
+            else:
+                temp_node.next = l2
+                l2 = l2.next
+            temp_node = temp_node.next
+        temp_node.next = l1 or l2
+        return final_node.next
         ## 40ms/14.2MB
         #if l1 and l2:
         #    if l1.val > l2.val:
