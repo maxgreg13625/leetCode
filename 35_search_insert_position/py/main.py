@@ -5,7 +5,7 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
-        # 32ms/14.2MB
+        # recursive: 32ms/14.2MB
         length = len(nums)
         if target > nums[-1]:
             return length
@@ -17,6 +17,18 @@ class Solution(object):
                 return mid + self.searchInsert(nums[mid:], target)
             else:
                 return self.searchInsert(nums[:mid], target)
+        ## loop solution  36ms/14.3MB
+        #i = 0
+        #j = len(nums) - 1
+        #while(i <= j):
+        #    pivot = (i + j) // 2
+        #    if (nums[pivot] == target):
+        #        return pivot
+        #    elif (nums[pivot] >= target):
+        #        j = pivot - 1
+        #    else:
+        #        i = pivot + 1
+        #return i
 
 assert Solution().searchInsert([1, 3, 5, 6], 5) == 2
 assert Solution().searchInsert([1, 3, 5, 6], 2) == 1
